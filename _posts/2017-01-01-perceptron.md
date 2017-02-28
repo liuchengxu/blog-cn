@@ -1,5 +1,4 @@
 ---
-bg: "perceptron.png"
 layout: post
 title:  "Perceptron"
 crawlertitle: "Perceptron algorithm"

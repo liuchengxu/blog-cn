@@ -1,5 +1,4 @@
 ---
-bg: "machine.jpg"
 layout: post
 title: 理解梯度下降
 crawlertitle: "Understand gradient descent"
@@ -81,19 +80,19 @@ math: y
 
 方向导数定义:
 
-![]({{ site.images }}/posts/directional_derivation_definition.png)
+![]({{ site.baseurl }}{{ site.images }}/posts/directional_derivation_definition.png)
 
 方向导数公式:
 
-![]({{ site.images }}/posts/directional_derivation.png)
+![]({{ site.baseurl }}{{ site.images }}/posts/directional_derivation.png)
 
 梯度公式:
-![]({{ site.images }}/posts/gradient_definition.png)
+![]({{ site.baseurl }}{{ site.images }}/posts/gradient_definition.png)
 
 ##### 从方向导数与梯度进行证明
 
-![]({{ site.images }}/posts/gradient_proof2.png)
-![]({{ site.images }}/posts/gradient_proof3.png)
+![]({{ site.baseurl }}{{ site.images }}/posts/gradient_proof2.png)
+![]({{ site.baseurl }}{{ site.images }}/posts/gradient_proof3.png)
 
 ### 总结
 
