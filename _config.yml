@@ -21,7 +21,7 @@ google_analytics: UA-73260325-1
 # Build settings
 markdown: kramdown
 relative_permalinks: false
-permalink: /:categories/:title/
+permalink: /:categories/:title/ | prepend: site.baseurl
 
 # Posts settings
 future: true
