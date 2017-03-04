@@ -26,9 +26,9 @@ layout: default
     {% endif %}
 
     {% if page.previous.url %}
-      <a class="link-to-post" href="{{ page.previous.url }}">
+      <a class="link-to-post" href="{{ page.previous.url | prepend: site.baseurl }}">
         <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
-        <span class="link-to-post__title">{{ page.previous.title }}</span>
+        <span class="link-to-post__title">{{ page.previous.title | prepend: site.baseurl }}</span>
       </a>
     {% endif %}
 
