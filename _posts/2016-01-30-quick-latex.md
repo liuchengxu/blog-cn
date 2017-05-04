@@ -211,6 +211,6 @@ Mac 添加中文支持稍微多几个操作，除了引入xeCJK宏包，还要�
 
 - [论文简介](https://liuchengxu.github.io/szuthesis/)
 
-- [beamer slide](https://liuchengxu.github.io/szuthesis/dissertation_defence.pdf)
+- [beamer slide](https://liuchengxu.github.io/szuthesis/dissertation_defence.pdf), 一份 [beamer 指南](http://math.ecnu.edu.cn/~latex/slides/beamer/beamer_guide_cn.pdf).
 
 如果您已经懂得了基础操作，不妨看一下我在 CSDN 记录的一些 LaTeX 使用注意点，里面积累了我在 LaTeX 使用过程中的很多经验：[LaTeX实战经验：新手须知](http://blog.csdn.net/simple_the_best/article/details/51244631)
