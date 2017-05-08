@@ -208,8 +208,8 @@ main {
 
 .list-item {
   height: auto;
-  padding: 8px;
   overflow: hidden;
+  margin: 10px;
 }
 
 .list-item a{
@@ -243,13 +243,13 @@ main {
 }
 
 .list-date {
-  text-align: right;
-  float: right;
-  width: 100px;
-  font-size: 14px;
-  margin-left: 0.5em;
-  color: #999999;
-  text-transform: lowercase;
+    text-align: right;
+    float: right;
+    width: 100px;
+    font-size: 14px;
+    margin-left: 0.5em;
+    color: #999999;
+    text-transform: lowercase;
 }
 
 article {
@@ -375,7 +375,7 @@ article.index-page {
     color: #333;
     margin: 10px 0;
   }
-  
+
   &__title {
     font-size: 1em;
     font-weight: bold;

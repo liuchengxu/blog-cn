@@ -1,27 +1,18 @@
 ---
 layout: post
-title:  "Perceptron"
+title:  "感知器"
 crawlertitle: "Perceptron algorithm"
 summary: "Perceptron algorithm"
 categories: posts
-tags: ['machine learning']
+tag: "classification"
 author: Liu-Cheng Xu
 math: y
 ---
 
-This post will mainly analysis the perceptron alrorithm introcuded in the book *Python Machine Leerning*, whose github address is [here](https://github.com/rasbt/python-machine-learning-book). Actually, I will pay much attention to the code analysis step by step, not the theoretical introduction, which is easy to comprehend.
-
-The perceptron algorithm can be summarized by the following steps:
-
-1. Initialize the weights to 0 or a small random numbers.
-2. For each training sample $x^{(i)}$ perform the following steps:
-    1. Compute the output value $\hat{y}$.
-    2. Update the weights.
-
 ![perceptron](https://github.com/rasbt/python-machine-learning-book/blob/master/code/ch02/images/02_04.png?raw=true)
 (图片来自 python-machine-learning)
 
-感知器算法步骤大致如下：
+感知器算法 [^1] 步骤大致如下：
 
 1. 将权重初始化为 0 或一个很小的随机数。
 2. 对于每个训练样本 $x^{(i)}$ 执行下列操作：
@@ -102,3 +93,7 @@ class Perceptron(object):
         """Return class label after unit step"""
         return np.where(self.net_input(X) >= 0.0, 1, -1)
 ```
+
+参考资料:
+
+[^1]: [python machine learning](https://github.com/rasbt/python-machine-learning-book)

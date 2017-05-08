@@ -2,7 +2,7 @@
 
 layout: post
 title: 从零开始 LaTeX 快速入门
-tags: LaTeX
+tag: LaTeX
 categories: posts
 author: Liucheng Xu
 math: y

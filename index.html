@@ -7,14 +7,15 @@ summary: "Life is a long road"
 ---
 
 <article class="index-page">
-  <ul>
   {% for post in site.posts %}
-    <li class="list-item">
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <div class="list-item">
       <div class='list-date'>
-        {{ post.date | date_to_string }}
+        <small>{{ post.date | date_to_string }}</small>
       </div>
-    </li>
+      <div class="list-left">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <small class="category">{{ post.tag }}</small>
+      </div>
+    </div>
   {% endfor %}
-  </ul>
 </article>

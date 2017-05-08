@@ -2,7 +2,7 @@
 
 layout: post
 title: 偏差与方差
-tags: Machine Learning
+tag: "machine learning"
 categories: posts
 author: Liucheng Xu
 math: y
@@ -119,8 +119,15 @@ bias^2(\mathbf{x}) = \left( \overline{f}(\mathbf{x}) - y \right)^2
 
 - 充分训练后, 学习器的拟合能力已非常强, 训练数据的轻微扰动都会导致学习器发生显著变化, 当训练数据自身的、非全局的特性被学习器学到了, 则将发生过拟合.
 
+再进一步明确一点, 训练程度其实说是模型复杂度更合适. scott 文章中的图示也十分直观, 随着模型复杂度的提升, 偏差逐渐减小, 方差逐渐增大.
+
+![bias-variance]({{ site.baseurl }}{{ site.images }}/posts/bias-variance-model-complexity.png)
+
+关于偏差与方差其实还有一些可聊的内容, 未完待续 [^4].
+
 参考资料:
 
 [^1]: [Bias variance tradeoff 公式图解](https://twitter.com/chrisalbon/status/855110599721664512) .
 [^2]: <<机器学习>>, 周志华, 2.5 节偏差与方差.
 [^3]: [Understanding the Bias-Variance Tradeoff](http://scott.fortmann-roe.com/docs/BiasVariance.html)
+[^4]: [机器学习中的Bias(偏差)，Error(误差)，和Variance(方差)有什么区别和联系？](https://www.zhihu.com/question/27068705)

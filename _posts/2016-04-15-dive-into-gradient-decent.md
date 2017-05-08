@@ -4,7 +4,7 @@ title: 理解梯度下降
 crawlertitle: "Understand gradient descent"
 summary: "Gradient descent"
 categories: posts
-tags: ['machine learning']
+tag: "optimization"
 author: Liu-Cheng Xu
 math: y
 ---
