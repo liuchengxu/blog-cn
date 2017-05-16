@@ -1,5 +1,4 @@
 ---
-bg: "owl.jpg"
 layout: page
 title: "About"
 crawlertitle: "brief description of the author"
