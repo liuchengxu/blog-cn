@@ -22,6 +22,7 @@ body {
 
 article p {
   margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -292,11 +293,4 @@ a img {
 
 .post-title {
     text-align: center;
-}
-
-.category {
-    color: #aaaaaa;
-    font-style: italic;
-    font-size: 14px;
-    margin-left: 8px;
 }

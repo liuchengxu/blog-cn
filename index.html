@@ -13,8 +13,9 @@ summary: "Life is a long road"
         <small>{{ post.date | date_to_string }}</small>
       </div>
       <div class="list-left">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}
         <small class="category">{{ post.tag }}</small>
+        </a>
       </div>
     </div>
   {% endfor %}

@@ -212,6 +212,10 @@ main {
   margin: 10px;
 }
 
+@media screen and (max-width: 500px) {
+    .category {display: none}
+  }
+
 .list-item a{
     float: none;
     color: #7788aa;
@@ -219,6 +223,11 @@ main {
     padding-left: 1.6em;
     overflow: hidden;
     text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .list-item a:link {
@@ -245,13 +254,19 @@ main {
 .list-date {
     text-align: right;
     float: right;
-    width: 100px;
+    width: 25%;
     font-size: 14px;
     margin-left: 0.5em;
     color: #999999;
     text-transform: lowercase;
 }
 
+.category {
+    color: #aaaaaa;
+    font-style: italic;
+    font-size: 14px;
+    margin-left: 8px;
+}
 article {
   padding: 2em 1em;
   img,
