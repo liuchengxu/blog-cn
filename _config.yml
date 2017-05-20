@@ -16,7 +16,7 @@ url:  # the base hostname & protocol for your site
 twitter_username:
 github_username:  liuchengxu
 disqus_username:
-google_analytics: UA-73260325-1
+google_analytics: UA-73260325-3
 
 # Build settings
 markdown: kramdown
