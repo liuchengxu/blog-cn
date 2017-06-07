@@ -4,7 +4,6 @@ layout: post
 title: 偏差与方差
 tag: "machine learning"
 categories: posts
-author: Liucheng Xu
 math: y
 published: true
 

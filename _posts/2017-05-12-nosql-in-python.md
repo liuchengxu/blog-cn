@@ -4,7 +4,6 @@ layout: post
 title: 用 Python 写一个 NoSQL 数据库
 tag: "NoSQL"
 categories: posts
-author: Liucheng Xu
 math: y
 published: true
 

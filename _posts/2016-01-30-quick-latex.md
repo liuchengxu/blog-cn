@@ -4,7 +4,6 @@ layout: post
 title: 从零开始 LaTeX 快速入门
 tag: LaTeX
 categories: posts
-author: Liucheng Xu
 math: y
 published: true
 
@@ -159,13 +158,19 @@ content
 
 ![winedt]({{ site.baseurl }}{{site.images}}/posts/winedt.png)
 
-还有一个更方便的方式，直接使用<code>ctexart</code>模板即可:
+还有一个更方便的方式，直接使用<code>ctexart</code>模板:
 
 ```tex
 \documentclass[UTF8]{ctexart}
 ```
 
-Mac 添加中文支持稍微多几个操作，除了引入xeCJK宏包，还要设置字体名称。测试系统为osx 10.11.3，
+或者使用 ctex 宏包:
+
+```tex
+\usepackage{ctex}
+```
+
+如果 Mac 下直接使用 ctex 有问题的话， 可以使用 xeCJK ，不过可能需要稍微多几个操作，除了引入xeCJK宏包，还要设置字体名称。测试系统为osx 10.11.3，
 关于设置字体名称，spotlight 输入 font 打开 Mac 的字体册，从字体中选择一个，将其名称填入，如华文楷体的名称为 STKaiti 。
 如果没有显示字体名称，请 <kbd>command</kbd> + <kbd>I</kbd> 或在显示-->显示字体信息即可。
 

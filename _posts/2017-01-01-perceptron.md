@@ -5,7 +5,6 @@ crawlertitle: "Perceptron algorithm"
 summary: "Perceptron algorithm"
 categories: posts
 tag: "classification"
-author: Liu-Cheng Xu
 math: y
 ---
 

@@ -5,7 +5,6 @@ crawlertitle: "Understand gradient descent"
 summary: "Gradient descent"
 categories: posts
 tag: "optimization"
-author: Liu-Cheng Xu
 math: y
 ---
 
