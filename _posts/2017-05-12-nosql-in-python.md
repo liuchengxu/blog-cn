@@ -16,8 +16,6 @@ published: true
 
 ![nosql]({{ site.baseurl }}{{ site.images }}/posts/nosql.png)
 
-------
-
 NoSQL 这个词在近些年正变得随处可见. 但是到底 "NoSQL" 指的是什么? 它是如何并且为什么这么有用? 在本文, 我们将会通过纯 Python (我比较喜欢叫它, "轻结构化的伪代码") 写一个 NoSQL 数据库来回答这些问题.
 
 ### OldSQL
