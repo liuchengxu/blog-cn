@@ -269,6 +269,7 @@ main {
 }
 article {
   padding: 2em 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   img,
   embed,
   object,
@@ -294,14 +295,17 @@ article {
     display: block;
     margin: 1em auto;
     padding: .2em;
-    border: 2px solid #eee;
+    border: 3px solid #eee;
     background-color: #fff;
+    border-radius: 8px;
   }
 }
 
 article.index-page {
     margin-left: -20px;
     padding: 0 10px 20px 0;
+    font-size: 16px;
+    font-family: "ComputerModern", Georgia, Palatino, "Century Schoolbook L", "Times New Roman", Times, serif;
 }
 
 .post-meta {
