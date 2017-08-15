@@ -212,10 +212,10 @@ content
 
 我的本科论文 LaTeX 源文件已经放到了 [GitHub](https://github.com/liuchengxu/szuthesis) 上，对于初次使用 LaTeX 写论文的人应当具有一定的借鉴意义，在源文件中我做出了诸多注解。此外, 论文关于推荐系统，如果有人做相关方向也可看一下。
 
-- [szuthesis](https://github.com/liuchengxu/szuthesis)
-
+- [论文：szuthesis](https://github.com/liuchengxu/szuthesis)
 - [论文简介](https://liuchengxu.github.io/szuthesis/)
-
-- [beamer slide](https://liuchengxu.github.io/szuthesis/dissertation_defence.pdf), 一份 [beamer 指南](http://math.ecnu.edu.cn/~latex/slides/beamer/beamer_guide_cn.pdf).
+- [论文 beamer slide](https://liuchengxu.github.io/szuthesis/dissertation_defence.pdf)
+- [beamer 指南](http://math.ecnu.edu.cn/~latex/slides/beamer/beamer_guide_cn.pdf)
+- [Beamer 演示学习笔记](https://bbs.pku.edu.cn/attach/cb/40/cb401e254626b3f9/beamerlog-1112.pdf)
 
 如果您已经懂得了基础操作，不妨看一下我在 CSDN 记录的一些 LaTeX 使用注意点，里面积累了我在 LaTeX 使用过程中的很多经验：[LaTeX实战经验：新手须知](http://blog.csdn.net/simple_the_best/article/details/51244631)
