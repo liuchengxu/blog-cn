@@ -4,7 +4,7 @@ layout: post
 title: 在 Shell 脚本中调用另一脚本的三种方式
 tag: shell
 categories: posts
-published: true
+published: false
 
 ---
 
