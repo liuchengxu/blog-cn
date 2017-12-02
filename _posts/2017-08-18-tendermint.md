@@ -140,4 +140,4 @@ Tendermint 是一个易于理解，大部分操作为异步的 BFT 共识协议�
 
 [Cosmos Network](http://cosmos.network/) 的设计目的，是在实现了 ABCI 应用的加密货币中使用这个权益证明机制。
 
-本文译自：[Tendermint intro](https://tendermint.com/intro)
+原文：[Tendermint intro](https://tendermint.com/intro)

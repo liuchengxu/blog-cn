@@ -4,12 +4,11 @@ layout: post
 title: 用表情符号解释比特币 (1)
 tag: bitcoin
 categories: posts
-math: y
 published: true
 
 ---
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-1.png)
+![1]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-1.png)
 
 比特币是一个存储和消费数字货币的革命性方式，并且有着变革其他领域的潜力。无须成为一个数学家或密码学家, 你就可以理解它是怎么回事。当开始看到整个系统是如何形成时，你可能会变得十分兴奋。本文是三篇系列文章中的第一篇。
 
@@ -17,7 +16,7 @@ published: true
 
 但是记住：我仍然拥有一份拷贝。
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-2.gif)
+![2]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-2.gif)
 
 这就是典型地在互联网上数字信息的移动。你并不是真的 **转移（transfer）** 内容，而是对它进行了 **拷贝（copy）**。直到目前为止，这种方式都十分行得通：但是这可能有点不太恰当，毕竟复制一首歌或是一部电影并不太可能会对经济造成危害。
 
@@ -25,7 +24,7 @@ published: true
 
 如果我给你发送一美元，非常重要的一点是，我无法保留这一美元的副本。通过邮件来产生无限的数字货币，可能一开始看起来很有吸引力，但是如果每个人都开始这么干的话会发生什么事情呢？这会导致肆虐的货币膨胀，从而使得经济因此崩塌。
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-3.png)
+![3]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-3.png)
 
 传统上，在有线传输和使用借记卡的世界里，数字货币是由中心化机构进行跟踪以防止复制。比如说，银行的数据库会确认谁到底拥有了多少钱。这个系统依赖于中心化的机构，我们大都已经熟悉这个概念。当然，这个中心化机构对我们的钱有着绝对的控制权，因为我们的钱只是银行数据库里的一个数字而已。
 
@@ -41,7 +40,7 @@ published: true
 
 在比特币网络中，所有交易都永久记录于一个长长的列表之中，这个列表就叫做区块链。区块链并不是由一个中心的权威机构保护的秘密列表。它是一个分布式的公开列表，每个参与其中的计算机都有一个备份。
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-4.png)
+![4]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-4.png)
 
 比特币区块链是**不可更改**，**公开**，**分布式**的账簿：
 
@@ -67,7 +66,7 @@ published: true
 
 ### 一个比特币是如何诞生的
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-5.png)
+![5]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-5.png)
 
 美元是由美国政府印刷的，其他传统货币也是由它们的政府发行而来。很久以前，美元是由在美国财政部等量的黄金支持的。在那段时间，要想创造更多货币就需要更多等量的黄金，因此挖黄金十分流行。
 
@@ -82,7 +81,7 @@ published: true
 
 ### 初见哈希
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-6.png)
+![6]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-6.png)
 
 一个哈希就是一个数字指纹，因为它唯一识别了一串数字信息 -- 无论该信息是一张图片，一个图片相册，一部电影，一串密码，文本，还是其他的任何内容。它是由数字信息经过一个叫做“哈希”的过程衍生而来。它的形式可以是一串字母，数字和其他符号。
 
@@ -92,7 +91,7 @@ published: true
 
 举个例子，我们用叫做 [SHA-256](https://en.wikipedia.org/wiki/SHA-2) 的一个哈希函数来计算一个小狗图片的哈希。
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-7.jpeg)
+![7]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-7.jpeg)
 
 显然，大家应该都能看得出，这张小狗的图片不会是 Facebook 的违禁图片。不过，Facebook 里面的人不会真的去看这张照片，而是使用相关程序检测这张图片的哈希，如下：
 
@@ -106,7 +105,7 @@ published: true
 
 哈希函数一个非常有趣的特性是，只要我们稍微改变一下输入，输出就会完全不同。比如，如果我们改变这张图片的一个像素点，在小狗的眼睛上面放一个跳蚤大的黑色像素点：
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-8.png)
+![8]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-8.png)
 
 尽管只是改了一个像素值，但是再次对图片进行哈希，我们会得到一个完全不同的哈希值，：
 
@@ -122,11 +121,11 @@ published: true
 
 想象Facebook在两张违禁图片 🚫  和 ❌ , 执行一个哈希函数，得到结果哈希  💩  和 💀 。
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-10.png)
+![9]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-10.png)
 
 然后，有人上传了一张图片 ? ，因为 Facebook 还不知道它是否违规，所以 Facebook 会调用程序对图片进行哈希，结果是
 
-![]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-11.png)
+![10]({{ site.baseurl }}{{ site.images }}/posts/bitcoin-explained-11.png)
 
 尽管没有人真的去用肉眼观测过这张图片，但是 Facebook 已经知道它属于违禁图片，因此图片的哈希匹配了。没有人需要去直接查看新上传的输入，只要它有着与已有违禁图片的相同哈希，我们就认为这是违规图片。
 
@@ -134,4 +133,4 @@ published: true
 
 至此，在本系列的第一篇，我们知道了比特币是一个去中心化的货币，并非由任何的政府或金融机构发行，还知道了什么是哈希。在下一篇，我们将会了解比特币矿工是如何利用哈希来创造比特币，密码学是如何在完全可转移且不可逆的情况下，使得比特币具有唯一性和不可复制性。
 
-本文译自：[Bitcoin Explained (with Emoji)](https://medium.com/@tessr/making-money-530d2bb2b8f7)
+原文：[Bitcoin Explained (with Emoji)](https://medium.com/@tessr/making-money-530d2bb2b8f7)

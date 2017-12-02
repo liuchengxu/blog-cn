@@ -4,12 +4,9 @@ layout: post
 title: 用 Python 写一个 NoSQL 数据库
 tag: "NoSQL"
 categories: posts
-math: y
 published: true
 
 ---
-
-本文译自 [What is a NoSQL Database? Learn By Writing One In Python](https://jeffknupp.com/blog/2014/09/01/what-is-a-nosql-database-learn-by-writing-one-in-python/).
 
 - 完整的示例代码已经放到了 GitHub 上, 请 [点击这里](https://github.com/liuchengxu/hands-on-learning/blob/master/nosql.py), 这仅是一个极简的 demo, 旨在动手了解概念.
 - 如果对译文有任何的意见或建议，欢迎 [提 issue](https://github.com/liuchengxu/blog-cn/issues) 讨论, 批评指正. 
@@ -19,6 +16,7 @@ published: true
 NoSQL 这个词在近些年正变得随处可见. 但是到底 "NoSQL" 指的是什么? 它是如何并且为什么这么有用? 在本文, 我们将会通过纯 Python (我比较喜欢叫它, "轻结构化的伪代码") 写一个 NoSQL 数据库来回答这些问题.
 
 ### OldSQL
+
 很多情况下, SQL 已经成为 "数据库" (database) 的一个同义词. 实际上, **SQL** 是 *Strctured Query Language* 的首字母缩写, 而并非指数据库技术本身. 更确切地说, 它所指的是从 **RDBMS** (关系型数据库管理系统, *Relational Database Management System* ) 中检索数据的一门语言. MySQL, MS SQL Server 和 Oracle 都属于 RDBMS 的其中一员.
 
 RDBMS 中的 R, 即 "Relational" (有关系，关联的), 是其中内容最丰富的部分. 数据通过 *表 (table)* 进行组织, 每张表都是一些由 *类型 (type)* 相关联的 *列 (column)* 构成. 所有表, 列及其类的类型被称为数据库的 *schema* (架构或模式). schema 通过每张表的描述信息完整刻画了数据库的结构. 比如, 一张叫做 `Car` 的表可能有以下一些列:
@@ -32,6 +30,7 @@ RDBMS 中的 R, 即 "Relational" (有关系，关联的), 是其中内容最丰�
 在一张表中, 每个单一的条目叫做一 *行 (row)*, 或者一条 *记录 (record)*. 为了区分每条记录, 通常会定义一个 *主键 (primary key)*. 表中的 *主键* 是其中一列 , 它能够唯一标识每一行. 在表 `Car` 中, VIN 是一个天然的主键选择, 因为它能够保证每辆车具有唯一的标识. 两个不同的行可能会在 Make, Model, Year 和 Color 列上有相同的值, 但是对于不同的车而言, 肯定会有不同的 VIN. 反之， 只要两行拥有同一个 VIN, 我们不必去检查其他列就可以认为这两行指的的就是同一辆车.
 
 ### Querying
+
 SQL 能够让我们通过对数据库进行 *query (查询)* 来获取有用的信息. *查询* 简单来说, 查询就是用一个结构化语言向 RDBMS 提问, 并将其返回的行解释为问题的答案. 假设数据库表示了美国所有的注册车辆, 为了获取 *所有的* 记录, 我们可以通过在数据库上进行如下的 *SQL 查询* :
 
 ```sql
@@ -116,11 +115,13 @@ SELECT Vehicle.Model, Vehicle.Year FROM Vehicle, ServiceHistory WHERE Vehicle.VI
 当应对大量的数据时， 索引是提高查询速度不可或缺的一个工具。当然， 跟所有的事情一样，有得必有失， 使用索引会导致一些额外的消耗： 索引的数据结构会消耗内存，而这些内存本可用于数据库中存储数据。这就需要我们权衡其利弊，寻求一个折中的办法， 但是为经常查询的列加索引是 *非常* 常见的做法。
 
 ### The Clear Box
+
 得益于数据库能够检查一张表的 *schema* (描述了每列包含了什么类型的数据), 像索引这样的高级特性才能够实现， 并且能够基于数据做出一个合理的决策。 也就是说, 对于一个数据库而言， 一张表其实是一个 “黑盒” (或者说透明的盒子) 的反义词？
 
 当我们谈到 NoSQL 数据库的时候要牢牢记住这一点。 当涉及 *query* 不同类型数据库引擎的能力时， 这也是其中非常重要的一部分。
 
 ### Schemas
+
 我们已经知道, 一张表的 *schema* , 描述了列的名字及其所包含数据的类型。它还包括了其他一些信息， 比如哪些列可以为空， 哪些列不允许有重复值， 以及其他对表中列的所有限制信息。 在任意时刻一张表只能有一个 schema, 并且 *表中的所有行必须遵守 schema 的规定* 。
 
 这是一个非常重要的约束条件。 假设你有一张数据库的表， 里面有数以百万计的消费者信息。 你的销售团队想要添加额外的一些信息 （比如， 用户的年龄）, 以期提高他们邮件营销算法的准确度。 这就需要来 *alter (更改)* 现有的表 -- 添加新的一列。 我们还需要决定是否表中的每一行都要求该列必须有一个值。 通常情况下， 让一个列有值是十分有道理的， 但是这么做的话可能会需要一些我们无法轻易获得的信息（比如数据库中每个用户的年龄）。因此在这个层面上，也需要有些权衡之策。
@@ -128,6 +129,7 @@ SELECT Vehicle.Model, Vehicle.Year FROM Vehicle, ServiceHistory WHERE Vehicle.VI
 此外，对一个大型数据库做一些改变通常并不是一件小事。为了以防出现错误，有一个回滚方案非常重要。但即使是如此，一旦当 schema 做出改变后，我们也并不总是能够撤销这些变动。 schema 的维护可能是 DBA 工作中最困难的部分之一。
 
 ### Key/Value Stores
+
 在 “NoSQL” 这个词存在前， 像 `memcached` 这样的 *键/值 数据存储 (Key/Value Data Stores)* 无须 table schema 也可提供数据存储的功能。 实际上， 在 K/V 存储时， 根本没有 "表  （table）" 的概念。 只有 *键 (keys)* 与 *值 （values）* . 如果键值存储听起来比较熟悉的话， 那可能是因为这个概念的构建原则与 Python 的 `dict` 与 `set` 相一致: 使用 hash table （哈希表） 来提供基于键的快速数据查询。 一个基于 Python 的最原始的 NoSQL 数据库, 简单来说就是一个大的字典 (dictionary) .
 
 为了理解它的工作原理，亲自动手写一个吧！ 首先来看一下一些简单的设计想法：
@@ -212,6 +214,7 @@ COMMAND; [KEY]; [VALUE]; [VALUE TYPE]
 - `DELETE; foo;;`
 
 #### Reponse Messages
+
 一个 *响应消息 (Reponse Message)* 包含了两个部分， 通过 `;` 进行分隔。第一个部分总是 `True|False` , 它取决于所执行的命令是否成功。 第二个部分是命令消息 (command message), 当出现错误时，便会显示错误信息。对于那些执行成功的命令，如果我们不想要默认的返回值（比如 `PUT`）, 就会出现成功的信息。 如果我们返回成功命令的值 (比如 `GET`), 那么第二个部分就会是自身值。
 
 ##### Examples
@@ -232,6 +235,7 @@ COMMAND; [KEY]; [VALUE]; [VALUE TYPE]
 我将会以块状摘要的形式来展示全部代码。 整个代码不过 180 行，读起来也不会花费很长时间。
 
 #### Set Up
+
 下面是我们服务器所需的一些样板代码：
 
 ```python
@@ -260,6 +264,7 @@ STATS = {
 很容易看到， 上面的只是一个包的导入和一些数据的初始化。
 
 #### Set up(Cont'd)
+
 接下来我会跳过一些代码， 以便能够继续展示上面准备部分剩余的代码。 注意它涉及到了一些尚不存在的一些函数， 不过没关系， 我们会在后面涉及。 在完整版（将会呈现在最后）中， 所有内容都会被有序编排。 这里是剩余的安装代码：
 
 ```python
@@ -342,6 +347,7 @@ def parse_message(data):
 这里我们可以看到发生了类型转换 (type conversion). 如果希望值是一个 list, 我们可以通过对 string 调用 `str.split(',')` 来得到我们想要的值。 对于 `int`, 我们可以简单地使用参数为 string 的 `int()` 即可。 对于字符串与 `str()` 也是同样的道理。
 
 #### Command Handlers
+
 下面是命令处理器 (command handler) 的代码. 它们都十分直观，易于理解。 注意到虽然有很多的错误检查， 但是也并不是面面俱到, 十分庞杂。 在你阅读的过程中，如果发现有任何错误请移步 [这里](https://github.com/liuchengxu/blog-cn/issues) 进行讨论.
 
 ```python
@@ -439,6 +445,7 @@ def handle_stats():
 既然 NoSQL 数据库更容易写， 更容易维护，更容易实现， 那么我们为什么不是只使用 mongoDB 就好了？ 当然是有原因的， 还是那句话，有得必有失， 我们需要在 NoSQL 数据库所提供的数据灵活性 (data flexibility) 基础上权衡数据库的可搜索性 (searchability).
 
 #### Querying Data
+
 假如我们上面的 NoSQL 数据库来存储早前的 Car  数据。 那么我们可能会使用 VIN 作为 key, 使用一个列表作为每列的值， 也就是说, `2134AFGER245267 = ['Lexus', 'RX350', 2013, Black]` . 当然了， 我们已经丢掉了列表中每个索引的 *涵义 (meaning)* . 我们只需要知道在某个地方索引 1 存储了汽车的 Model , 索引 2 存储了 Year.
 
 糟糕的事情来了， 当我们想要执行先前的查询语句时会发生什么？ 找到 1994 年所有车的颜色将会变得噩梦一般。 我们必须遍历 `DATA` 中的 *每一个值* 来确认这个值是否存储了 car 数据亦或根本是其他不相关的数据， 比如说检查索引 2, 看索引 2 的值是否等于 1994，接着再继续取索引 3 的值. 这比 table scan 还要糟糕，因为它不仅要扫描每一行数据，还需要应用一些复杂的规则来回答查询。
@@ -448,6 +455,9 @@ NoSQL 数据库的作者当然也意识到了这些问题，(鉴于查询是一�
 当然了，尽管为了增强可查询性已经存在 （并且实现了）了一些更加复杂的方法， 但是在存储更少量的 schema 与增强可查询性之间做出妥协始终是一个不可逃避的问题。 本例中我们的数据库仅支持通过 key 进行查询。 如果我们需要支持更加丰富的查询， 那么事情就会变得复杂的多了。
 
 ### Summary
+
 至此, 希望 "NoSQL" 这个概念已然十分清晰。 我们学习了一点 SQL, 并且了解了 RDBMS 是如何工作的。 我们看到了如何从一个 RDBMS 中检索数据 （使用 SQL *查询 (query)*）. 通过搭建了一个玩具级别的 NoSQL 数据库, 了解了在可查询性与简洁性之间面临的一些问题， 还讨论了一些数据库作者应对这些问题时所采用的一些方法。
 
 即便是简单的 key-value 存储， 关于数据库的知识也是浩瀚无穷。虽然我们仅仅是探讨了其中的星星点点, 但是仍然希望你已经了解了 NoSQL 到底指的是什么， 它是如何工作的， 什么时候用比较好。如果您想要分享一些不错的想法， 欢迎 [讨论](https://github.com/liuchengxu/hands-on-learning/issues).
+
+原文: [What is a NoSQL Database? Learn By Writing One In Python](https://jeffknupp.com/blog/2014/09/01/what-is-a-nosql-database-learn-by-writing-one-in-python/)
